@@ -79,6 +79,8 @@
 			
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/" target="_blank">随笔</a></li>
 			
+				<li><a href="/logs/" target="_blank">日志</a></li>
+			
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -159,6 +161,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -191,11 +195,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a></li>
+					<li style="width: 25%"><a href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 25%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+		        
+					<li style="width: 25%"><a href="/logs/">日志</a></li>
 		        
 				</ul>
 			</nav>
@@ -776,6 +782,773 @@
 
 
   
+    <article id="post-2026-05-29-工作日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2026/05/29/2026-05-29-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" target="_blank">2026-05-29 工作日志</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2026/05/29/2026-05-29-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" class="archive-article-date">
+        <time datetime="2026-05-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-05-29</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="工作内容"><a href="#工作内容" class="headerlink" title="工作内容"></a>工作内容</h2><ul>
+<li>今日主要工作是对治具小板的维修。</li>
+<li>上午去浙江巨传电子维修BGA封装的FPGA芯片加上巡厂。</li>
+<li>维修芯片时的主要注意事项如下。</li>
+<li>➀拆芯片。</li>
+<li>拆板子时，下面用加热台加热到板子有点烫手时，用热风枪将芯片从板子上拆下，热风枪温度大概要至少380度往上，要不然吹不掉。</li>
+<li>➁除残锡。</li>
+<li>拆掉后先用焊锡在底板上将大部分锡珠带走，然后用吸锡带将残锡吸去，吸去后再上一层锡，然后再用吸锡带除去(加焊锡的目的是通过焊锡除去底板焊盘的锡渣和氧化物)。后用洗板水洗干净。</li>
+<li>芯片也是同样的操作，但是最后洗板水洗完后要放在加热台上烫个1秒钟，把板子上的水汽蒸干掉，要不然下一步植锡珠有水汽可能让锡珠爆掉。</li>
+<li>➂植锡球。</li>
+<li>将芯片放在BGA植锡台上，先刷一遍锡浆，然后换一个钢网往里植球(锡球是0.55的，我们买的0.35的太小了)，后面再上一遍锡浆。</li>
+<li>上完后将它放在加热台上下面烫着，上面用热风枪吹着，直至所有的锡浆完全融化，锡珠完全附着于芯片上。</li>
+<li>➃焊接。</li>
+<li>将板子放在加热台上，加热至烫手，然后加上少量焊油，芯片上也抹上焊油。</li>
+<li>芯片放好后用热风枪吹至所有的部分都下沉，然后用镊子轻轻碰一下，它要是自动回位即为焊好(利用焊锡的爬锡性，它会自动复位)，然后在加热台上再放在几十秒等自然冷却，用洗板水擦拭即为完成。</li>
+<li>下午将维修回来的小板烧录程序。</li>
+<li>通过烧录发现，总共6块板子中，只有3块能成功烧入。</li>
+<li>由此可见，我们研发部负责生产这一批小板的人，基本功或责任心存在较大问题。</li>
+<li>这3块板子的主要问题及原因如下： ➀ 打开下载器，插上数据线后，发现没有任何芯片数据显示。</li>
+<li>于是测量3.3V输出口，发现没有3.3V输出。</li>
+<li>接着查U1芯片的前级，发现5V输入正常；</li>
+<li>但U1芯片的后级（第8脚应该有0.8V），没有输出，因此判断可能是U1芯片损坏或虚焊。</li>
+<li>随后将U1拆下来重新焊接，问题解决。</li>
+<li>➁ 同样是插上下载线后没有任何数据指示，下载器亮红灯。</li>
+<li>测量3.3V输出，发现没有输出。</li>
+<li>测量U1芯片前级，发现其R18电阻的两只脚电压均为5V。</li>
+<li>然而R18与R21串联接地，R18两端电压应有压降，因此判断R18的第1脚可能虚焊。</li>
+<li>随后对R18引脚进行补焊，问题解决。</li>
+<li>下载完程序后，小板上的LED灯在上电后应该常亮，但板子的灯却不亮。</li>
+<li>程序能下载进去，故猜测可能是LED灯引脚焊反。</li>
+<li>目测后发现确实焊反，拆掉后重新调转方向焊接，问题解决。</li>
+<li>➂ 供电线插上后LED灯就亮，下载器也亮绿灯，但下载界面提示“未找到USB”。</li>
+<li>刚开始怀疑是Flash的问题，因此测量U2、U3两端的通信线对地电压，发现U2的电压为3.18V，但通信线引脚处于悬空状态，电压应被上拉至3.3V。</li>
+<li>于是检查其前级，最终发现U6的1.2V没有输出。</li>
+<li>最后重新焊接U6，问题得以解决。</li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日志</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2026/05/29/2026-05-29-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-05-28-工作日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2026/05/28/2026-05-28-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" target="_blank">2026-05-28 工作日志</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2026/05/28/2026-05-28-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" class="archive-article-date">
+        <time datetime="2026-05-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-05-28</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="工作内容"><a href="#工作内容" class="headerlink" title="工作内容"></a>工作内容</h2><ul>
+<li>今日工作仍是针对弱电治具进行调试。</li>
+<li>已完成对调零和整体上电测试，调幅待原公司的30V治具调试上位机发过来才可进行(今天给的上位机程序是调试模块用的，不是用来调试治具的，后续仍需找原公司协调) 。</li>
+<li>在调试中遇到的问题： </li>
+<li>➀VHDC调零失败。</li>
+<li>原因是在断掉前极输入后，VHDC处于悬空状态，所以导致调零总是差个0.15V左右，无论换什么电阻都没法去将VHDC精确的调至2.500V。</li>
+<li>后面查阅资料发现需要将VHDC前端接地，才会真正的去掉零漂，然后调零成功。</li>
+<li>➁治具上电后，A相直接输出一个30V左右的电压。</li>
+<li>原因是在变压器接电时，将前极的380V的零线和后级的52V零线并在一起(因为旧的治具中变压接了N线，而它的N线和后极是隔离的)，所以只要治具一上电，N线相当于一个高电位，A相反而变成零电位，从而在测量时，才会出现输出端有30V交流电输出的现象。</li>
+<li>解决方法就是把前极的N线直接去掉，与后极形成隔离，这样就不会出现输出端N线电位被拉高的情况了。</li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日志</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2026/05/28/2026-05-28-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-05-27-工作日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2026/05/27/2026-05-27-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" target="_blank">2026-05-27 工作日志</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2026/05/27/2026-05-27-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" class="archive-article-date">
+        <time datetime="2026-05-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-05-27</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="工作内容"><a href="#工作内容" class="headerlink" title="工作内容"></a>工作内容</h2><ul>
+<li>今日主要针对30V弱电治具的调试。</li>
+<li>根据调试文档，已经将modbus协议控制继电器部分调试完成，在下午进行调零测试时出现了问题，三路调零中，0x0001寄存器的ox0101和0x0102的值与文档调试结果一致，读取值为0x0000。</li>
+<li>ox0100的寄存器值一直读取的值为ox000c左右的值，后面测得VHDC侧的电压为2.518V,与2.500v VREF基准值相差了0.018V刚好对应这个值，后面认为是采样电阻方面的问题，后面将VHDC相关电阻都进行了替换仍未解决，最后给公司现有的工装进行上电，发现VHDC的电压为2.607V，我也不太清楚这路电压值是否要在调零时等于2.500v,询问过王宇他也没有做过相关弱点治具的调试。</li>
+<li>对底板中的风扇插接件端口进行了标记，并在本地bom文档中进行了更换。</li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日志</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2026/05/27/2026-05-27-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-05-26-工作日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2026/05/26/2026-05-26-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" target="_blank">2026-05-26 工作日志</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2026/05/26/2026-05-26-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" class="archive-article-date">
+        <time datetime="2026-05-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-05-26</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="工作内容"><a href="#工作内容" class="headerlink" title="工作内容"></a>工作内容</h2><ul>
+<li>去南京灿能出差。</li>
+<li>实验中出现的问题：当感性负载直接加载4KvA的功率时，a&#x2F;b&#x2F;c三相会报桥臂过流，但2KvA、2KvA的加就不会出现这个情况，原因分析可能时一次电感上太多会导致瞬间电流过大桥臂过流。</li>
+<li>上次炸机的原因：a&#x2F;b&#x2F;c相分别加了（R）15KW+(C)3KvA的负载后，在又加2KvA的容性负载，设备出现了噔、噔噔的几声有规律的响动后，测试人员切断了电源，等设备不报警了，在重新上220V电的过程中发生着火。</li>
+<li>后续实验南京灿能提出的要求： </li>
+<li>(1)我们的产品出厂前能否多做几次带载切换电压，比如从150V切至250V，280V切至140V这种符合现实工程用电的需求。</li>
+<li>(2)三相能否分别带不同的电压启动，比如a相180V、b相210V、c相240V这样的不平衡的相位进行实际运行。(我们已经做出了回复可以三相不平衡的运转我们的设备)。</li>
+<li>(3)需要带电感85%的功效比(至少要大于70%)，比如45KW的阻性负载需达到30KvA的感性负载。</li>
+<li>(4)关于电容冲击，设备可以承受3KW的容性负载。</li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日志</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2026/05/26/2026-05-26-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-05-25-工作日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2026/05/25/2026-05-25-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" target="_blank">2026-05-25 工作日志</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2026/05/25/2026-05-25-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" class="archive-article-date">
+        <time datetime="2026-05-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-05-25</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="工作内容"><a href="#工作内容" class="headerlink" title="工作内容"></a>工作内容</h2><ul>
+<li>今天主要是制作弱电治具，上午在焊接bga封装的fpga芯片时，因为锡珠买的有点小，所以植锡时锡珠在焊盘上只有一点锡，所以用热风枪吹到板子上时效果不太好，下午时发货拿给人家贴片厂帮忙焊接。</li>
+<li>组装弱点治具五金件，已经将五金部分组装好，等后天出差回来进行调试。</li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日志</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2026/05/25/2026-05-25-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-05-22-工作日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2026/05/22/2026-05-22-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" target="_blank">2026-05-22 工作日志</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2026/05/22/2026-05-22-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" class="archive-article-date">
+        <time datetime="2026-05-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-05-22</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="工作内容"><a href="#工作内容" class="headerlink" title="工作内容"></a>工作内容</h2><ul>
+<li>使用30v弱电治具对20k的返修板进行测试，通过测试学会了整个测试流程，并简单撰写了一下20k弱电测试的调试工艺，防止下次测试时有遗漏。</li>
+<li>对20k的板子进行维修，检修出了两台，都已通过弱电测试。</li>
+<li>对20k进行固件升级，但是升级后效果不是很明显，在135v升压时功率只能跑到18kw左右切旁路，原因可能是输入测电流已经快到了140A，电流保护了。</li>
+<li>变压器没有输出，联系厂家后可能原因是输入电压在扳闸的一瞬间掉到了一个很低的值，导致电压没上去。</li>
+<li>后面换了个交流接触器，勉强能用，但要观察是否还会有类似情况发生。</li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日志</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2026/05/22/2026-05-22-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-05-21-工作日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2026/05/21/2026-05-21-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" target="_blank">2026-05-21 工作日志</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2026/05/21/2026-05-21-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" class="archive-article-date">
+        <time datetime="2026-05-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-05-21</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="工作内容"><a href="#工作内容" class="headerlink" title="工作内容"></a>工作内容</h2><ul>
+<li>向王文艺询问20k的一些问题。</li>
+<li>20K后期改版的话要注意元器件规格是否一致，尽量用规格一致的选型，如果替代料封装大小不同，改版时需要注意各个地之间的安规。</li>
+<li>学习使用30V弱电治具的测试流程，已经大致通过治具将20K的返修板子进行弱电测试跑通。</li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日志</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2026/05/21/2026-05-21-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2026-05-20-工作日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2026/05/20/2026-05-20-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" target="_blank">2026-05-20 工作日志</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2026/05/20/2026-05-20-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" class="archive-article-date">
+        <time datetime="2026-05-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-05-20</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="工作内容"><a href="#工作内容" class="headerlink" title="工作内容"></a>工作内容</h2><ul>
+<li>整理BOM清单，将bom表按照ERP的格式录入表格中。 </li>
+<li>进行34K台架测试实验，找到了134V升压达不到满载的原因（欠压保护设置的是132V，带满载时变压器端输入电压会掉到低于132V，导致切旁路从而达不到满载状态）。</li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日志</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2026/05/20/2026-05-20-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -903,6 +1676,10 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日志</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
