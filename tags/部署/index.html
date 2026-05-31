@@ -6,17 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://cnlnyt.github.io">
-  <title>Hexo</title>
+  <title>Tag: 部署 | Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <!-- <meta name="keywords" content="">
-    <meta name="description" content=""> -->
-  
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://cnlnyt.github.io/index.html">
+<meta property="og:url" content="https://cnlnyt.github.io/tags/%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="CnLnYt">
@@ -202,153 +198,40 @@
           </div>
           <div id="js-content" class="content-ll">
             
-
   
-    <article id="post-Blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-  
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2026" class="archive-year">2026</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2026/05/31/Blog/" class="archive-article-date">
+        <time datetime="2026-05-31T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-05-31</time>
+</a>
+
+        </div>
+    	 
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2026/05/31/Blog/" target="_blank">Hexo + GitHub Pages 搭建博客全记录</a>
+	  <a class="archive-article-title" href="/2026/05/31/Blog/" target="_blank">Hexo + GitHub Pages 搭建博客全记录</a>
   
     </h1>
   
 
 
-  
-  
-<a href="/2026/05/31/Blog/" class="archive-article-date">
-        <time datetime="2026-05-31T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-05-31</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>这篇记录我从零搭建 Hexo 博客、部署到 GitHub Pages 的全过程，并整理了后面遇到的坑和解决方案，方便以后回顾，也给同样走过这条路的人一个完整参考。</p>
-<h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1. 环境准备"></a>1. 环境准备</h2><p>我的环境是 Windows，核心依赖如下：</p>
-<ul>
-<li>Node.js (LTS)</li>
-<li>Git</li>
-<li>Hexo CLI</li>
-</ul>
-<p>安装 Hexo CLI：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>确认版本：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-初始化-Hexo-项目"><a href="#2-初始化-Hexo-项目" class="headerlink" title="2. 初始化 Hexo 项目"></a>2. 初始化 Hexo 项目</h2><p>新建博客目录并初始化：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init Blogs</span><br><span class="line"><span class="built_in">cd</span> Blogs</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<p>目录结构会出现：</p>
-<ul>
-<li><code>source/</code> 写文章</li>
-<li><code>themes/</code> 主题目录</li>
-<li><code>_config.yml</code> 站点配置</li>
-<li><code>public/</code> 生成的静态文件</li>
-</ul>
-<h2 id="3-配置-GitHub-Pages"><a href="#3-配置-GitHub-Pages" class="headerlink" title="3. 配置 GitHub Pages"></a>3. 配置 GitHub Pages</h2><p>我使用的仓库是：<code>cnlnyt/cnlnyt.github.io</code>。</p>
-<p>创建仓库后，部署配置写在站点配置文件：</p>
-<ul>
-<li><code>_config.yml</code> 的 <code>url</code> 设置为：<code>https://cnlnyt.github.io</code></li>
-<li><code>deploy</code> 配置：</li>
-</ul>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">	<span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">	<span class="attr">repo:</span> <span class="string">git@github.com:cnlnyt/cnlnyt.github.io.git</span></span><br><span class="line">	<span class="attr">branch:</span> <span class="string">gh-pages</span></span><br></pre></td></tr></table></figure>
-
-<p>安装部署插件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-选择主题并配置"><a href="#4-选择主题并配置" class="headerlink" title="4. 选择主题并配置"></a>4. 选择主题并配置</h2><p>我选的是 <code>yilia-plus</code> 主题。把主题放到 <code>themes/yilia-plus</code> 后，站点配置里开启主题：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">yilia-plus</span></span><br></pre></td></tr></table></figure>
-
-<p>主题相关配置都在：</p>
-<ul>
-<li><code>themes/yilia-plus/_config.yml</code></li>
-</ul>
-<p>这一点非常关键：</p>
-<ul>
-<li>站点配置是 <code>_config.yml</code></li>
-<li>主题配置是 <code>themes/yilia-plus/_config.yml</code></li>
-</ul>
-<p>两个文件不要混淆。</p>
-<h2 id="5-新建文章与本地预览"><a href="#5-新建文章与本地预览" class="headerlink" title="5. 新建文章与本地预览"></a>5. 新建文章与本地预览</h2><p>创建文章：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;我的第一篇博客&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>本地预览：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>浏览器访问：<code>http://localhost:4000</code></p>
-<h2 id="6-生成与部署"><a href="#6-生成与部署" class="headerlink" title="6. 生成与部署"></a>6. 生成与部署</h2><p>完整发布流程：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>或者一条命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-<p>部署成功后，访问：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cnlnyt.github.io</span><br></pre></td></tr></table></figure>
-
-<h2 id="7-我踩过的坑"><a href="#7-我踩过的坑" class="headerlink" title="7. 我踩过的坑"></a>7. 我踩过的坑</h2><h3 id="7-1-Git-提示-CRLF-LF-警告"><a href="#7-1-Git-提示-CRLF-LF-警告" class="headerlink" title="7.1 Git 提示 CRLF&#x2F;LF 警告"></a>7.1 Git 提示 CRLF&#x2F;LF 警告</h3><p>部署时看到类似：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warning: in the working copy of &#x27;xxx.js&#x27;, LF will be replaced by CRLF</span><br></pre></td></tr></table></figure>
-
-<p>这是 Windows 下 Git 的换行符提示，不是错误，不影响部署和页面展示。</p>
-<p><strong>结论：可忽略。</strong></p>
-<h3 id="7-2-页脚一直显示主题作者信息"><a href="#7-2-页脚一直显示主题作者信息" class="headerlink" title="7.2 页脚一直显示主题作者信息"></a>7.2 页脚一直显示主题作者信息</h3><p>页面右下角出现：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GitHub: hexo-theme-yilia-plus by Litten</span><br></pre></td></tr></table></figure>
-
-<p>我以为是配置项能改，结果发现是主题模板里写死的。</p>
-<p><strong>解决方法：</strong></p>
-<p>修改主题模板文件：</p>
-<ul>
-<li><code>themes/yilia-plus/layout/_partial/footer.ejs</code></li>
-</ul>
-<p>把默认作者信息替换成自己的 GitHub：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;% var defaultFooter = &#x27;GitHub:&lt;a href=&quot;https://github.com/cnlnyt&quot; target=&quot;_blank&quot;&gt;cnlnyt&lt;/a&gt;&#x27;; %&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="7-3-主题配置和站点配置混用"><a href="#7-3-主题配置和站点配置混用" class="headerlink" title="7.3 主题配置和站点配置混用"></a>7.3 主题配置和站点配置混用</h3><p>有些配置写在 <code>_config.yml</code> 里不起作用，后来发现是主题配置项，应该写在 <code>themes/yilia-plus/_config.yml</code>。</p>
-<p><strong>记住：</strong>主题相关的菜单、头像、社交链接、友链等都在主题配置里。</p>
-<h3 id="7-4-url-配置错误导致资源路径不对"><a href="#7-4-url-配置错误导致资源路径不对" class="headerlink" title="7.4 url 配置错误导致资源路径不对"></a>7.4 <code>url</code> 配置错误导致资源路径不对</h3><p>如果 <code>url</code> 填错，或者 <code>root</code> 设置不匹配，会导致 CSS&#x2F;JS 加载失败，页面样式异常。</p>
-<p><strong>我的最终配置：</strong></p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">https://cnlnyt.github.io</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="7-5-部署后页面没更新"><a href="#7-5-部署后页面没更新" class="headerlink" title="7.5 部署后页面没更新"></a>7.5 部署后页面没更新</h3><p>常见原因：</p>
-<ul>
-<li>忘了 <code>hexo clean</code></li>
-<li>本地生成了，但没 <code>hexo d</code></li>
-<li>浏览器缓存没刷新</li>
-</ul>
-<p>解决思路：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>然后浏览器强制刷新。</p>
-<h2 id="8-总结"><a href="#8-总结" class="headerlink" title="8. 总结"></a>8. 总结</h2><p>用 Hexo + GitHub Pages 搭博客上手很快，但细节不少。只要搞清楚：</p>
-<ul>
-<li>站点配置 vs 主题配置</li>
-<li>生成目录 public&#x2F; 只是构建产物</li>
-<li>部署依赖 hexo-deployer-git</li>
-<li>Git 警告不等于错误</li>
-</ul>
-<p>基本就不会踩大坑。</p>
-<p>如果后续还有新的问题和解决方案，我会继续补充到这篇文章里。</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -372,7 +255,7 @@
 		</ul>
 	</div>
 
-    
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -385,39 +268,17 @@
 	</div>
 
 
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2026/05/31/Blog/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -457,10 +318,10 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
