@@ -668,7 +668,9 @@
 <h3 id="9-5-关联远程仓库并推送"><a href="#9-5-关联远程仓库并推送" class="headerlink" title="9.5 关联远程仓库并推送"></a>9.5 关联远程仓库并推送</h3><p>把仓库地址替换成你自己的：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch -M main</span><br><span class="line">git remote add origin https://github.com/你的用户名/你的仓库名.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
 
-<h3 id="9-6-推送前检查清单（避免误传）"><a href="#9-6-推送前检查清单（避免误传）" class="headerlink" title="9.6 推送前检查清单（避免误传）"></a>9.6 推送前检查清单（避免误传）</h3><p>推送前先快速自查这几条：</p>
+<h3 id="9-6-后期推送只需发这两条指令"><a href="#9-6-后期推送只需发这两条指令" class="headerlink" title="9.6 后期推送只需发这两条指令"></a>9.6 后期推送只需发这两条指令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin main</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-7-推送前检查清单（避免误传）"><a href="#9-7-推送前检查清单（避免误传）" class="headerlink" title="9.7 推送前检查清单（避免误传）"></a>9.7 推送前检查清单（避免误传）</h3><p>推送前先快速自查这几条：</p>
 <ol>
 <li><code>.gitignore</code> 是否包含 <code>build/</code>、<code>CMakeFiles/</code>、<code>CMakeCache.txt</code>。</li>
 <li><code>git status</code> 是否干净，没有误提交的编译产物。</li>

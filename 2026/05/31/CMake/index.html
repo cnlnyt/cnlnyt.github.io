@@ -18,7 +18,7 @@
 <meta property="og:description" content="这篇文章记录我在 Windows 上用 VS Code + Qt 5.14.2 + MinGW 搭建 CMake 工程的完整过程。 1. 环境准备1.1 必备软件 Qt 5.14.2（含 MinGW 7.3 64-bit 组件） CMake（建议 3.20+） VS Code Git（可选，但建议安装）  我当前安装路径示例：  Qt：D:\Qt\Qt5.14.2\5.14.2\mingw73_6">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-05-31T02:00:00.000Z">
-<meta property="article:modified_time" content="2026-05-31T11:06:27.325Z">
+<meta property="article:modified_time" content="2026-05-31T11:23:22.103Z">
 <meta property="article:author" content="CnLnYt">
 <meta property="article:tag" content="踩坑">
 <meta property="article:tag" content="Qt">
@@ -481,7 +481,9 @@
 <h3 id="9-5-关联远程仓库并推送"><a href="#9-5-关联远程仓库并推送" class="headerlink" title="9.5 关联远程仓库并推送"></a>9.5 关联远程仓库并推送</h3><p>把仓库地址替换成你自己的：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch -M main</span><br><span class="line">git remote add origin https://github.com/你的用户名/你的仓库名.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
 
-<h3 id="9-6-推送前检查清单（避免误传）"><a href="#9-6-推送前检查清单（避免误传）" class="headerlink" title="9.6 推送前检查清单（避免误传）"></a>9.6 推送前检查清单（避免误传）</h3><p>推送前先快速自查这几条：</p>
+<h3 id="9-6-后期推送只需发这两条指令"><a href="#9-6-后期推送只需发这两条指令" class="headerlink" title="9.6 后期推送只需发这两条指令"></a>9.6 后期推送只需发这两条指令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin main</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-7-推送前检查清单（避免误传）"><a href="#9-7-推送前检查清单（避免误传）" class="headerlink" title="9.7 推送前检查清单（避免误传）"></a>9.7 推送前检查清单（避免误传）</h3><p>推送前先快速自查这几条：</p>
 <ol>
 <li><code>.gitignore</code> 是否包含 <code>build/</code>、<code>CMakeFiles/</code>、<code>CMakeCache.txt</code>。</li>
 <li><code>git status</code> 是否干净，没有误提交的编译产物。</li>
