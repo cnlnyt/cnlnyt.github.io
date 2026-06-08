@@ -220,6 +220,102 @@
             
 
   
+    <article id="post-2026-05-28-工作日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2026/05/28/2026-05-28-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" target="_blank">2026-05-28 工作日志</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2026/05/28/2026-05-28-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" class="archive-article-date">
+        <time datetime="2026-05-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-05-28</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="工作内容"><a href="#工作内容" class="headerlink" title="工作内容"></a>工作内容</h2><ul>
+<li>今日工作仍是针对弱电治具进行调试。</li>
+<li>已完成对调零和整体上电测试，调幅待原公司的30V治具调试上位机发过来才可进行(今天给的上位机程序是调试模块用的，不是用来调试治具的，后续仍需找原公司协调) 。</li>
+<li>在调试中遇到的问题：</li>
+<li>➀VHDC调零失败。</li>
+<li>原因是在断掉前极输入后，VHDC处于悬空状态，所以导致调零总是差个0.15V左右，无论换什么电阻都没法去将VHDC精确的调至2.500V。</li>
+<li>后面查阅资料发现需要将VHDC前端接地，才会真正的去掉零漂，然后调零成功。</li>
+<li>➁治具上电后，A相直接输出一个30V左右的电压。</li>
+<li>原因是在变压器接电时，将前极的380V的零线和后级的52V零线并在一起(因为旧的治具中变压接了N线，而它的N线和后极是隔离的)，所以只要治具一上电，N线相当于一个高电位，A相反而变成零电位，从而在测量时，才会出现输出端有30V交流电输出的现象。</li>
+<li>解决方法就是把前极的N线直接去掉，与后极形成隔离，这样就不会出现输出端N线电位被拉高的情况了。</li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日志</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2026/05/28/2026-05-28-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2026-05-27-工作日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1007,95 +1103,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2026/05/15/2026-05-15-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2026-05-14-工作日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2026/05/14/2026-05-14-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" target="_blank">2026-05-14 工作日志</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2026/05/14/2026-05-14-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" class="archive-article-date">
-        <time datetime="2026-05-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-05-14</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="工作内容"><a href="#工作内容" class="headerlink" title="工作内容"></a>工作内容</h2><ul>
-<li>针对20k出现的旁路继电器吸死的板子进行更换新的继电器，这个现象出现的次数也比较频繁，但是还没有查明原因，只能先更换后再重新进行测试。</li>
-<li>对彩页的内容进行考核，通过检测也发现了自己对公司的产品还不够深入，后续还需多向公司老员工请教。</li>
-</ul>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日志</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2026/05/14/2026-05-14-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/">展开全文 >></a>
     </p>
     
 
