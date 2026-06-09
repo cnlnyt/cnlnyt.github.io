@@ -220,6 +220,127 @@
             
 
   
+    <article id="post-2026-05-29-工作日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2026/05/29/2026-05-29-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" target="_blank">2026-05-29 工作日志</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2026/05/29/2026-05-29-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" class="archive-article-date">
+        <time datetime="2026-05-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-05-29</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="工作内容"><a href="#工作内容" class="headerlink" title="工作内容"></a>工作内容</h2><ul>
+<li>今日主要工作是对治具小板的维修。</li>
+<li>上午去浙江巨传电子维修BGA封装的FPGA芯片加上巡厂。</li>
+<li>维修芯片时的主要注意事项如下。</li>
+<li>➀拆芯片。</li>
+<li>拆板子时，下面用加热台加热到板子有点烫手时，用热风枪将芯片从板子上拆下，热风枪温度大概要至少380度往上，要不然吹不掉。</li>
+<li>➁除残锡。</li>
+<li>拆掉后先用焊锡在底板上将大部分锡珠带走，然后用吸锡带将残锡吸去，吸去后再上一层锡，然后再用吸锡带除去(加焊锡的目的是通过焊锡除去底板焊盘的锡渣和氧化物)。后用洗板水洗干净。</li>
+<li>芯片也是同样的操作，但是最后洗板水洗完后要放在加热台上烫个1秒钟，把板子上的水汽蒸干掉，要不然下一步植锡珠有水汽可能让锡珠爆掉。</li>
+<li>➂植锡球。</li>
+<li>将芯片放在BGA植锡台上，先刷一遍锡浆，然后换一个钢网往里植球(锡球是0.55的，我们买的0.35的太小了)，后面再上一遍锡浆。</li>
+<li>上完后将它放在加热台上下面烫着，上面用热风枪吹着，直至所有的锡浆完全融化，锡珠完全附着于芯片上。</li>
+<li>➃焊接。</li>
+<li>将板子放在加热台上，加热至烫手，然后加上少量焊油，芯片上也抹上焊油。</li>
+<li>芯片放好后用热风枪吹至所有的部分都下沉，然后用镊子轻轻碰一下，它要是自动回位即为焊好(利用焊锡的爬锡性，它会自动复位)，然后在加热台上再放在几十秒等自然冷却，用洗板水擦拭即为完成。</li>
+<li>下午将维修回来的小板烧录程序。</li>
+<li>通过烧录发现，总共6块板子中，只有3块能成功烧入。</li>
+<li>由此可见，我们研发部负责生产这一批小板的人，基本功或责任心存在较大问题。</li>
+<li>这3块板子的主要问题及原因如下： ➀ 打开下载器，插上数据线后，发现没有任何芯片数据显示。</li>
+<li>于是测量3.3V输出口，发现没有3.3V输出。</li>
+<li>接着查U1芯片的前级，发现5V输入正常；</li>
+<li>但U1芯片的后级（第8脚应该有0.8V），没有输出，因此判断可能是U1芯片损坏或虚焊。</li>
+<li>随后将U1拆下来重新焊接，问题解决。</li>
+<li>➁ 同样是插上下载线后没有任何数据指示，下载器亮红灯。</li>
+<li>测量3.3V输出，发现没有输出。</li>
+<li>测量U1芯片前级，发现其R18电阻的两只脚电压均为5V。</li>
+<li>然而R18与R21串联接地，R18两端电压应有压降，因此判断R18的第1脚可能虚焊。</li>
+<li>随后对R18引脚进行补焊，问题解决。</li>
+<li>下载完程序后，小板上的LED灯在上电后应该常亮，但板子的灯却不亮。</li>
+<li>程序能下载进去，故猜测可能是LED灯引脚焊反。</li>
+<li>目测后发现确实焊反，拆掉后重新调转方向焊接，问题解决。</li>
+<li>➂ 供电线插上后LED灯就亮，下载器也亮绿灯，但下载界面提示“未找到USB”。</li>
+<li>刚开始怀疑是Flash的问题，因此测量U2、U3两端的通信线对地电压，发现U2的电压为3.18V，但通信线引脚处于悬空状态，电压应被上拉至3.3V。</li>
+<li>于是检查其前级，最终发现U6的1.2V没有输出。</li>
+<li>最后重新焊接U6，问题得以解决。</li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日志</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2026/05/29/2026-05-29-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2026-05-28-工作日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1041,97 +1162,6 @@
 
 
   
-    <article id="post-2026-05-15-工作日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2026/05/15/2026-05-15-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" target="_blank">2026-05-15 工作日志</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2026/05/15/2026-05-15-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/" class="archive-article-date">
-        <time datetime="2026-05-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2026-05-15</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="工作内容"><a href="#工作内容" class="headerlink" title="工作内容"></a>工作内容</h2><ul>
-<li>公司的usb转rs485的调试线有点不太够用了，找库管请领了4个航空插头端子，焊了4条调试线。</li>
-<li>通过下午的曾总工主持的会议，学习了公司稳压器项目的原理图和工作流程，受益匪浅。</li>
-<li>协助王文艺将最后一块因USB缺料而未进行30V测试的20K板子进行检修。</li>
-<li>测试中电流调幅不通过，后面发现is1电路中有个采样电阻损坏，也希望以后王文艺走后自己能够独立进行20k电路板的维修检测。</li>
-</ul>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日志</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2026/05/15/2026-05-15-%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1269,34 +1299,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Qt</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CMake</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MinGW</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">VSCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">踩坑 - 随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">QMake</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">踩坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
@@ -1309,7 +1311,35 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">踩坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Qt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">QMake</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MinGW</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CMake</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">VSCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">踩坑 - 随笔</a>
               </li>
             
             <div class="clearfix"></div>
